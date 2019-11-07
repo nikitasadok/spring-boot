@@ -4,8 +4,7 @@ pipeline {
 	stages{
 		stage('BUILD'){
 			steps{
-				sh 'pwd'
-				sh 'ls -la'				
+				sh 'mvn clean install -f ./spring-boot-tests/spring-boot-smoke-tests/spring-boot-smoke-test-web-ui				
 			}
 		}
 	
