@@ -4,9 +4,8 @@ pipeline {
 	stages{
 		stage('BUILD'){
 			steps{
-			
-				sh 'cd /var/lib/jenkins/workspace/CI-pipeline/spring-boot-tests/spring-boot-smoke-tests/spring-boot-smoke-test-web-ui'
-				sh 'mvn clean install'				
+				def mvnHome = tool name: 'maven-3', type: 'maven'
+				sh "${mvnHome}/bin/mvn clean install -f /var/lib/jenkins/workspace/CI-pipeline/spring-boot-tests/spring-boot-smoke-tests/spring-boot-smoke-test-web-ui"				
 			}
 		}
 	
